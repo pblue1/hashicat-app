@@ -3,17 +3,19 @@
 
 # Script to deploy a very simple web application.
 # The web app has a customizable image and some text.
+DEPLOY_TIME=$(date '+%Y-%m-%d %H:%M:%S')
 
 cat << EOM > /var/www/html/index.html
 <html>
   <head><title>Meow!</title></head>
-  <body>
+  <body>/
   <div style="width:800px;margin: 0 auto">
 
   <!-- BEGIN -->
   <center><img src="http://${PLACEHOLDER}/${WIDTH}/${HEIGHT}"></img></center>
   <center><h2>Meow World!</h2></center>
-  Welcome to ${PREFIX}'s app. Hashicorp Terraform Test Web (by Aplussoft).
+  <center><h2>Welcome to ${PREFIX}'s app. Hashicorp Terraform Test Web (by Aplussoft).</h2></center>
+  <center><p>Deployed at: ${DEPLOY_TIME}</p></center>
   <!-- END -->
 
   </div>
